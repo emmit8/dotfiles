@@ -43,6 +43,8 @@ nmap <silent> <leader>p :bp<CR>
 nmap <silent> <leader>p :bp<CR>
 nmap <silent> <leader>r :CtrlPBuffer<CR>
 nmap <Enter> o<ESC>
+" Prevent moving cursor to left while ESC pressing
+inoremap <Esc> <Esc>`^
 
 let g:ctrlp_map='<leader>e'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
