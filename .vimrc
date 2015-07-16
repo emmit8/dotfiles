@@ -1,7 +1,7 @@
 syntax on
 
-colorscheme solarized
-set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+colorscheme github
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set number
 set backspace=indent,eol,start
 set laststatus=2
@@ -18,18 +18,21 @@ let g:mapleader = ","
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'kien/ctrlp.vim'
-Plug 'zirrostig/vim-schlepp'
-Plug 'Valloric/YouCompleteMe'
-Plug 'kchmck/vim-coffee-script'
-Plug 'bling/vim-airline'
-Plug 'scrooloose/nerdtree'
-Plug 'pangloss/vim-javascript'
+" Code plugins
 Plug 'tpope/vim-commentary'
+Plug 'pangloss/vim-javascript'
+Plug 'kchmck/vim-coffee-script'
+Plug 'Valloric/YouCompleteMe'
+
+" Interface plugins, utils, etc
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 Plug 'ntpeters/vim-airline-colornum'
+Plug 'zirrostig/vim-schlepp'
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
@@ -43,8 +46,19 @@ nmap <silent> <leader>p :bp<CR>
 nmap <silent> <leader>p :bp<CR>
 nmap <silent> <leader>r :CtrlPBuffer<CR>
 nmap <Enter> o<ESC>
-" Prevent moving cursor to left while ESC pressing
+
+" Prevent moving cursor to left while pressing ESC
 inoremap <Esc> <Esc>`^
+
+" Moving line
+nnoremap Ô :m .+1<CR>==
+nnoremap  :m .-2<CR>==
+
+inoremap Ô <Esc>:m .+1<CR>==gi
+inoremap  <Esc>:m .-2<CR>==gi
+
+vnoremap Ô :m '>+1<CR>gv=gv
+vnoremap  :m '<-2<CR>gv=gv
 
 let g:ctrlp_map='<leader>e'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -55,7 +69,7 @@ vmap <Tab> >gv
 nmap <S-Tab> <<
 nmap <Tab> >>
 
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'sol'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
