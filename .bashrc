@@ -9,7 +9,7 @@ eval "$(rbenv init -)"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
+PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
 PATH=$PATH:$HOME/.rvm/bin:$SCALA_HOME/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt

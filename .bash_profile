@@ -57,3 +57,5 @@ alias vi="vim"
 alias nano="nano -w"
 alias mc="mc -b"
 alias tm="tmux attach || tmux new"
+
+[[ -s ~/.bashrc ]] && source ~/.bashrc
