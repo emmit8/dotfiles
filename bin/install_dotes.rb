@@ -6,39 +6,37 @@ class DotFiles
     @@home_dir = File.expand_path "~"
     @@dotfiles_root = File.expand_path "..", Dir.pwd
 
-    def initialize(overwrite_all = false, backup = false)
-        @options = {:overwrite_all => overwrite_all, :backup => backup} 
-        @inputs = {:Yes => true, :No => false}
+    def initialize(backup = false)
+        @options = {:backup => backup}
+    end
+
+    def backup?
+        puts "Backup existing files ? [Yes/No]"
+        if ["yes", "y"].include? gets.chomp.downcase
+            @options[:backup] = true
+        end
     end
 
     def install
         puts "Installing emmit's dotfiles..."
-        dotfiles().each do |dot| 
-            destanation = File.join @@home_dir, dot 
-            if not @options[:overwrite_all] and File.exist? destanation
-                print "File [#{dot}] already exists. Overwrite all? (Yes/No) "
-                if @inputs[gets.chomp.to_sym]
-                    @options[:overwrite_all] = true
-                end
+        backup?()
+        dotfiles().each do |dot|
+            dest = File.join @@home_dir, dot
+            if File.exist? dest and not File.symlink? dest and @options[:backup]
+                puts "File `#{dot}` backuped with .bak extenstion"
+                FileUtils.cp(dest, File.join(dest + ".bak"))
             else
-                if File.exist? destanation and not File.symlink? destanation 
-                    unless @options[:backup]
-                        puts "Backup existing files ? (Yes/No)"
-                        if @inputs[gets.chomp.to_sym]
-                            @options[:backup] = true
-                        end
-                    else
-                        FileUtils.cp(destanation, File.join(destanation + ".bak"))
-                    end
-                end
+                puts "Creating symlink at `#{@@home_dir}` for dotfile `#{dot}`"
+                FileUtils.ln_sf File.expand_path(dot, @@dotfiles_root), dest
             end
         end
+        puts "Installing successful done..."
     end
 
     def dotfiles
-       Dir.entries(@@dotfiles_root).reject{|entry| File.directory?(File.join("./../", entry)) || entry =~ /LICENSE|README/ }
+        Dir.entries(@@dotfiles_root).reject{|entry| File.directory?(File.join("./../", entry)) || entry =~ /LICENSE|README/ }
     end
 end
-DotFiles.new(false, false).install()
+DotFiles.new(false).install()
 
 

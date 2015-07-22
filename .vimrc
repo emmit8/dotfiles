@@ -8,7 +8,7 @@ set laststatus=2
 set autoindent
 set smartindent
 set cursorline
-set listchars=tab:▸\ ,eol:¬,trail:⋅
+set listchars=tab:▸\ ,trail:⋅
 set list
 filetype plugin indent on
 let mapleader = ","
@@ -46,7 +46,7 @@ nmap <silent> <leader>p :bp<CR>
 nmap <silent> <leader>p :bp<CR>
 nmap <silent> <leader>r :CtrlPBuffer<CR>
 nmap <Enter> o<ESC>
-
+nmap Ò mzgg=G`z 
 " Prevent moving cursor to left while pressing ESC
 inoremap <Esc> <Esc>`^
 
