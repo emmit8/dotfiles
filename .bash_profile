@@ -1,6 +1,6 @@
 export CLICOLOR=1
 # use yellow for directories
-export LSCOLORS=dxfxcxdxbxegedabagacad
+# export LSCOLORS=dxfxcxdxbxegedabagacad
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 export HISTFILE="$HOME/.bash_history"
