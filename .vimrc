@@ -13,6 +13,7 @@ set list
 filetype plugin indent on
 let mapleader = ","
 let g:mapleader = ","
+let g:closetag_html_style=1
 
 " ---------- Plugins
 
@@ -33,6 +34,7 @@ Plug 'zirrostig/vim-schlepp'
 Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'docunext/closetag.vim'
 
 call plug#end()
 
