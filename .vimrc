@@ -35,6 +35,7 @@ Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'docunext/closetag.vim'
+Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
@@ -42,13 +43,13 @@ call plug#end()
 nmap <silent> <leader>t :NERDTreeToggle<CR>
 nmap <silent> <leader>x :x<CR>
 nmap <silent> <leader>q :q!<CR>
-nmap <silent> <leader>w :w<CR>
+nmap <silent> <leader>w :bw<CR>
 nmap <silent> <leader>n :bn<CR>
-nmap <silent> <leader>p :bp<CR>
 nmap <silent> <leader>p :bp<CR>
 nmap <silent> <leader>r :CtrlPBuffer<CR>
 nmap <Enter> o<ESC>
 nmap Ò mzgg=G`z 
+
 " Prevent moving cursor to left while pressing ESC
 inoremap <Esc> <Esc>`^
 
@@ -82,3 +83,7 @@ let delimitMate_jump_expansion=1
 
 " Custom tabwidth for coffeescript files
 au FileType coffee setl ts=2 sw=2 et
+
+" Set javascript syntax in jsp files by default
+au BufRead,BufNewFile *.jsp set syntax=javascript
+
