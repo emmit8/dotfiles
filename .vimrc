@@ -28,7 +28,6 @@ Plug 'kchmck/vim-coffee-script'
 
 " Interface plugins, utils, etc
 Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 Plug 'ntpeters/vim-airline-colornum'
 Plug 'bling/vim-airline'
