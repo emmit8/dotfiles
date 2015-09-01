@@ -37,7 +37,7 @@ set_prompts() {
     local BG_CYAN="\[\033[46m\]"
     local BG_WHITE="\[\033[47m\]"
 
-    PS1="${EM_BLACK}\w\n${EM_BLUE}> ${DEFAULT}"
+    PS1="${EM_YELLOW}\w\n${EM_BLUE}> ${DEFAULT}"
     export PS1
 }
 set_prompts

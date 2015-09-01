@@ -1,6 +1,6 @@
 syntax on
 
-colorscheme github
+colorscheme tomorrow
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set number
 set backspace=indent,eol,start
@@ -10,10 +10,12 @@ set smartindent
 set cursorline
 set listchars=tab:▸\ ,trail:⋅
 set list
+
 filetype plugin indent on
 let mapleader = ","
 let g:mapleader = ","
 let g:closetag_html_style=1
+let g:NERDTreeWinSize=60
 
 " ---------- Plugins
 
@@ -23,14 +25,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
-Plug 'Valloric/YouCompleteMe'
 
 " Interface plugins, utils, etc
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 Plug 'ntpeters/vim-airline-colornum'
-Plug 'zirrostig/vim-schlepp'
 Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
