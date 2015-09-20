@@ -1,6 +1,6 @@
 syntax on
 
-colorscheme tomorrow
+colorscheme zenburn
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set number
 set backspace=indent,eol,start
@@ -15,7 +15,7 @@ filetype plugin indent on
 let mapleader = ","
 let g:mapleader = ","
 let g:closetag_html_style=1
-let g:NERDTreeWinSize=60
+let g:NERDTreeWinSize=40
 
 " ---------- Plugins
 
@@ -25,6 +25,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
+Plug 'wavded/vim-stylus'
 
 " Interface plugins, utils, etc
 Plug 'Raimondi/delimitMate'
@@ -34,7 +35,7 @@ Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'docunext/closetag.vim'
-Plug 'edkolev/tmuxline.vim'
+Plug 'tpope/vim-fireplace'
 
 call plug#end()
 
@@ -45,6 +46,7 @@ nmap <silent> <leader>q :q!<CR>
 nmap <silent> <leader>w :bw<CR>
 nmap <silent> <leader>n :bn<CR>
 nmap <silent> <leader>p :bp<CR>
+nmap <silent> <leader>j gf<CR>
 nmap <silent> <leader>r :CtrlPBuffer<CR>
 nmap <Enter> o<ESC>
 nmap Ò mzgg=G`z 
@@ -72,7 +74,6 @@ nmap <S-Tab> <<
 nmap <Tab> >>
 
 let g:airline_theme = 'sol'
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
