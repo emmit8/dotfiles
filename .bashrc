@@ -2,6 +2,7 @@
 export SCALA_HOME=/usr/local/opt/scala
 export JAVA_HOME=$(/usr/libexec/java_home -v '1.8*')
 
+export DOTFILES=~/.dotfiles
 # RBENV --->
 eval "$(rbenv init -)"
 
