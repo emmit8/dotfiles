@@ -6,7 +6,7 @@ require 'fileutils.rb'
 
 class DotFiles
     @@home_dir = File.expand_path "~"
-    @@dotfiles_root = File.expand_path(File.dirname(__FILE__), "..")
+    @@dotfiles_root = File.expand_path("..", File.dirname(__FILE__))
 
     def initialize(backup = false)
         @options = {:backup => backup}
@@ -48,7 +48,7 @@ class DotFiles
     end
 
     def dotfiles
-        Dir.entries(@@dotfiles_root).reject{|entry| File.directory?(File.join("./../", entry)) or not File.basename(entry).start_with?(".") }
+        Dir.entries(@@dotfiles_root).reject{|entry| File.directory? File.expand_path(entry) or not File.basename(entry).start_with?(".") }
     end
 end
 
