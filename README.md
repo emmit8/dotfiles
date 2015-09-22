@@ -1,7 +1,8 @@
-# dotfiles
-emmit's dotfiles
+### - dotfiles
+yo! It is *emmit's* dotfiles
 
-### 1. Requirements
+### - Requirements
 
-1. Ruby
+1. Ruby, Python
 2. [psutil](https://github.com/giampaolo/psutil)
+
