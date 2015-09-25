@@ -1,12 +1,12 @@
 export CLICOLOR=1
 # use yellow for directories
 # export LSCOLORS=dxfxcxdxbxegedabagacad
-export HISTSIZE=50000
-export HISTFILESIZE=50000
-export HISTFILE="$HOME/.bash_history"
+# export HISTSIZE=50000
+# export HISTFILESIZE=50000
+# export HISTFILE="$HOME/.bash_history"
 
 set_prompts() {
-    # Обычные цвета
+    # Simple colors
     local DEFAULT="\[\033[0m\]"   
     local BLACK="\[\033[0;30m\]"
     local RED="\[\033[0;31m\]"
@@ -17,7 +17,7 @@ set_prompts() {
     local CYAN="\[\033[0;36m\]"
     local WHITE="\[\033[0;37m\]"
 
-    # Bold
+    # Bold colors
     local EM_BLACK="\[\033[1;30m\]"
     local EM_RED="\[\033[1;31m\]"
     local EM_GREEN="\[\033[1;32m\]"

@@ -1,17 +1,25 @@
+command_exists () {
+        type "$1" &> /dev/null ;
+}
+
 # HOME  --->
 export SCALA_HOME=/usr/local/opt/scala
 export JAVA_HOME=$(/usr/libexec/java_home -v '1.8*')
 
 export DOTFILES=~/.dotfiles
 # RBENV --->
-eval "$(rbenv init -)"
+if command_exists rbenv ; then
+    eval "$(rbenv init -)"
+fi
 
 # NVM   --->
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+if command_exists nvm ; then
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
+fi
 
 PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
 PATH=$PATH:$HOME/.rvm/bin:$SCALA_HOME/bin # Add RVM to PATH for scripting
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# Mignight Commander viewer and sys editor
+export EDITOR=vi

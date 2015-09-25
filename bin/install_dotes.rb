@@ -35,7 +35,7 @@ class DotFiles
                 puts "File `#{dot}` backuped with .bak extenstion"
                 FileUtils.cp(dest, File.join(dest + ".bak"))
             else
-                unless File.readlink(dest) == source
+                unless File.file?(dest) && File.readlink(dest) == source
                     FileUtils.safe_unlink dest
                     puts "Creating symlink at `#{@@home_dir}` for dotfile `#{dot}`"
                     FileUtils.ln_sf source, dest
