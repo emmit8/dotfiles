@@ -5,4 +5,12 @@ yo! It is *emmit's* dotfiles
 
 1. Ruby, Python
 2. [psutil](https://github.com/giampaolo/psutil)
+3. [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard) for pasteboard sharing between tmux and 
+
+### - installation
+
+```bash
+  > git clone https://github.com/emmit8/dotfiles.git
+  > cd dotfiles && ./bin/install_dotes.rb 
+```
 
