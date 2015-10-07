@@ -43,10 +43,6 @@ set_prompts() {
 set_prompts
 unset -f set_prompts
 
-if [ -f ~/.git/git-completion.bash ]; then
-  . ~/.git/git-completion.bash
-fi
-
 alias ls="ls $LS_OPTIONS"
 alias l="ls -l"
 alias ll="ls -l"
@@ -58,4 +54,6 @@ alias nano="nano -w"
 alias mc="mc -b"
 alias tm="tmux attach || tmux new"
 
+# Git autcompletion
+[[ -f $(brew --prefix)/etc/bash_completion ]] && . $(brew --prefix)/etc/bash_completion
 [[ -s ~/.bashrc ]] && source ~/.bashrc
