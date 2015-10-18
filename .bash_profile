@@ -51,7 +51,7 @@ alias lh="ls -lh"
 alias lah="ls -lAh"
 alias vi="vim"
 alias nano="nano -w"
-alias mc="mc -b"
+alias mc="mc"
 alias tm="tmux attach || tmux new"
 
 # Git autcompletion

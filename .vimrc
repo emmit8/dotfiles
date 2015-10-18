@@ -42,11 +42,13 @@ call plug#end()
 " ---------- Mappings 
 nmap <silent> <leader>t :NERDTreeToggle<CR>
 nmap <silent> <leader>x :x<CR>
+nmap <silent> <leader>s :w<CR>
 nmap <silent> <leader>q :q!<CR>
 nmap <silent> <leader>w :bw<CR>
 nmap <silent> <leader>n :bn<CR>
 nmap <silent> <leader>p :bp<CR>
 nmap <silent> <leader>j gf<CR>
+nmap <silent> <leader>m :CtrlPMixed<CR>
 nmap <silent> <leader>r :CtrlPBuffer<CR>
 nmap <Enter> o<ESC>
 nmap Ò mzgg=G`z 
@@ -83,7 +85,8 @@ let delimitMate_jump_expansion=1
 
 " Custom tabwidth for coffeescript files
 au FileType coffee setl ts=2 sw=2 et
+au FileType stylus setl ts=2 sw=2 et
 
 " Set javascript syntax in jsp files by default
 au BufRead,BufNewFile *.jsp set syntax=javascript
-
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
