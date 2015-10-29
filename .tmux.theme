@@ -13,5 +13,5 @@ set -g message-attr bold
 
 set -g status-left ' #H >> '
 set -g window-status-format "#[fg=colour239] [#I] #W "
-set -g window-status-current-format "#[fg=colour214,noreverse] [#I] #W "
+set -g window-status-current-format "#[fg=colour13,noreverse] [#I] #W "
 set -g status-right '#[fg=color39]#($DOTFILES/bin/now-playing.sh) #($DOTFILES/bin/system-info.py)'

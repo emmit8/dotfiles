@@ -78,9 +78,9 @@ vmap <Tab> >gv
 nmap <S-Tab> <<
 nmap <Tab> >>
 
-let g:airline_theme = 'sol'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+let g:airline_theme = 'bubblegum'
+" let g:airline_left_sep=''
+" let g:airline_right_sep=''
 
 " Turns on/off the expansion of <CR>
 let delimitMate_expand_cr=1
