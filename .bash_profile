@@ -1,6 +1,7 @@
 export CLICOLOR=1
+
 # use yellow for directories
-# export LSCOLORS=dxfxcxdxbxegedabagacad
+export LSCOLORS=dxfxcxdxbxegedabagacad
 # export HISTSIZE=50000
 # export HISTFILESIZE=50000
 # export HISTFILE="$HOME/.bash_history"
@@ -37,23 +38,12 @@ set_prompts() {
     local BG_CYAN="\[\033[46m\]"
     local BG_WHITE="\[\033[47m\]"
 
-    PS1="${EM_RED}\w\n${EM_YELLOW}% ${DEFAULT}"
+    PS1="${EM_MAGENTA}\w\n${EM_CYAN}% ${DEFAULT}"
     export PS1
 }
 set_prompts
 unset -f set_prompts
 
-alias ls="ls $LS_OPTIONS"
-alias l="ls -l"
-alias ll="ls -l"
-alias la="ls -lA"
-alias lh="ls -lh"
-alias lah="ls -lAh"
-alias vi="vim"
-alias nano="nano -w"
-alias mc="mc"
-alias tm="tmux attach || tmux new"
-
-# Git autcompletion
 [[ -f $(brew --prefix)/etc/bash_completion ]] && . $(brew --prefix)/etc/bash_completion
 [[ -s ~/.bashrc ]] && source ~/.bashrc
+[[ -s ~/.bash_aliases ]] && source ~/.bash_aliases
