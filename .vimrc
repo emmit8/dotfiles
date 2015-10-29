@@ -1,6 +1,7 @@
 syntax on
 
 colorscheme zenburn
+set clipboard=unnamed
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set number
 set backspace=indent,eol,start
@@ -9,6 +10,7 @@ set autoindent
 set smartindent
 set cursorline
 set listchars=tab:▸\ ,trail:⋅
+set paste
 set list
 
 filetype plugin indent on
@@ -35,6 +37,7 @@ Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'docunext/closetag.vim'
+Plug 'bling/vim-bufferline'
 Plug 'tpope/vim-fireplace'
 
 call plug#end()
