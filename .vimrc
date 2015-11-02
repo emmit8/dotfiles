@@ -1,73 +1,116 @@
-syntax on
-
+" General " ~~~~~~~~~~~~~~~~ syntax on
 colorscheme zenburn
+
+let mapleader = ","
+let g:mapleader = ","
 set clipboard=unnamed
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-set number
+set hidden
+
 set backspace=indent,eol,start
 set laststatus=2
+
+set number
 set autoindent
 set smartindent
 set cursorline
+
 set listchars=tab:▸\ ,trail:⋅
-set paste
 set list
 
+set incsearch
+set ignorecase
+set hlsearch
+" set completeopt=longest,menuone
+set omnifunc=syntaxcomplete#Complete
 filetype plugin indent on
-let mapleader = ","
-let g:mapleader = ","
-let g:closetag_html_style=1
-let g:NERDTreeWinSize=40
 
-" ---------- Plugins
-
+" Plugins
+" ~~~~~~~~~~~~~~~~
 call plug#begin('~/.vim/plugged')
 
 " Code plugins
-Plug 'tpope/vim-commentary'
-Plug 'pangloss/vim-javascript'
-Plug 'kchmck/vim-coffee-script'
+" ~~~~~~~~~~~~~~~~
+
+" stylus
 Plug 'wavded/vim-stylus'
 
+" javascript
+Plug 'pangloss/vim-javascript'
+
+" coffee
+Plug 'kchmck/vim-coffee-script'
+
+" clojure
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-fireplace'
+
 " Interface plugins, utils, etc
-Plug 'Raimondi/delimitMate'
-Plug 'ervandew/supertab'
-Plug 'ntpeters/vim-airline-colornum'
-Plug 'bling/vim-airline'
+" ~~~~~~~~~~~~~~~~
+
+" navigation
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+
+" editing
+Plug 'tpope/vim-commentary'
+Plug 'ervandew/supertab'
+Plug 'Raimondi/delimitMate'
 Plug 'docunext/closetag.vim'
+
+" ui
+Plug 'ntpeters/vim-airline-colornum'
+Plug 'bling/vim-airline'
 Plug 'bling/vim-bufferline'
-Plug 'tpope/vim-fireplace'
 
 call plug#end()
 
-" ---------- Mappings 
-nmap <silent> <leader>t :NERDTreeToggle<CR>
-nmap <silent> <leader>x :x<CR>
-nmap <silent> <leader>s :w<CR>
-nmap <silent> <leader>q :q!<CR>
-nmap <silent> <leader>w :bw<CR>
-nmap <silent> <leader>n :bn<CR>
-nmap <silent> <leader>p :bp<CR>
-nmap <silent> <leader>j gf<CR>
-nmap <silent> <leader>m :CtrlPMixed<CR>
-nmap <silent> <leader>r :CtrlPBuffer<CR>
+" Mappings
+" ~~~~~~~~~~~~~~~~
+
+nmap <silent> <leader>x :x<cr>
+nmap <silent> <leader>s :w<cr>
+nmap <silent> <leader>q :q<cr>
+
+nmap <silent> <leader>t :NERDTreeToggle<cr>
+
+nmap <silent> <leader>m :CtrlPMRUFiles<cr>
+nmap <silent> <leader>r :CtrlPBuffer<cr>
+
+" Vim firplace mappings
+nmap <silent> <leader>j gf<cr>
+nmap <silent> <s-e> :Eval<cr>
+
+" buffers
+noremap <c-l> :bn!<cr>
+noremap <c-h> :bp!<cr>
+
 nmap <Enter> o<ESC>
 nmap Ò mzgg=G`z 
+noremap <silent> ; :nohlsearch<CR>
 
-" Prevent moving cursor to left while pressing ESC
-inoremap <Esc> <Esc>`^
+imap <c-@> <c-space>
 
 " Moving line
-nnoremap Ô :m .+1<CR>==
-nnoremap  :m .-2<CR>==
+nnoremap Ô :m .+1<cr>==
+nnoremap  :m .-2<cr>== inoremap Ô <Esc>:m .+1<cr>==gi
+inoremap  <Esc>:m .-2<cr>==gi
 
-inoremap Ô <Esc>:m .+1<CR>==gi
-inoremap  <Esc>:m .-2<CR>==gi
+vnoremap Ô :m '>+1<cr>gv=gv
+vnoremap  :m '<-2<cr>gv=gv
 
-vnoremap Ô :m '>+1<CR>gv=gv
-vnoremap  :m '<-2<CR>gv=gv
+let g:closetag_html_style=1
+let g:NERDTreeWinSize=40
+
+" let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabCrMapping=1
+
+let g:SuperTabMappingForward = '<c-space>'
+let g:SuperTabMappingBackward = '<s-c-space>'
+
+let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
 
 let g:ctrlp_map='<leader>e'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
