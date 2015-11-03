@@ -82,8 +82,8 @@ nmap <silent> <leader>j gf<cr>
 nmap <silent> <s-e> :Eval<cr>
 
 " buffers
-noremap <c-l> :bn!<cr>
-noremap <c-h> :bp!<cr>
+noremap <silent> <c-l> :bn!<cr>
+noremap <silent> <c-h> :bp!<cr>
 
 nmap <Enter> o<ESC>
 nmap Ò mzgg=G`z 
