@@ -2,16 +2,16 @@ set -g status-interval 2
 set -g status-left-length 32
 set -g status-right-length 150
 
-set -g status-fg white
-set -g status-bg colour234
+set -g status-fg colour234
+set -g status-bg colour15
 set -g window-status-activity-attr bold
 set -g pane-border-fg colour245
 set -g pane-active-border-fg colour39
-set -g message-fg colour16
-set -g message-bg colour221
+set -g message-fg colour15
+set -g message-bg colour16
 set -g message-attr bold
 
 set -g status-left ' #(whoami) >> '
-set -g window-status-format "#[fg=colour239] [#I] #W "
-set -g window-status-current-format "#[fg=colour13,noreverse] [#I] #W "
+set -g window-status-format "#[fg=colour238] [#I] #W "
+set -g window-status-current-format "#[fg=colour88,bold,noreverse] [#I] #W "
 set -g status-right '#[fg=color39]#($DOTFILES/bin/now-playing.sh) #($DOTFILES/bin/system-info.py)'

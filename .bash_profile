@@ -1,7 +1,7 @@
 export CLICOLOR=1
 
 # use yellow for directories
-export LSCOLORS=dxfxcxdxbxegedabagacad
+# export LSCOLORS=dxfxcxdxbxegedabagacad
 # export HISTSIZE=50000
 # export HISTFILESIZE=50000
 # export HISTFILE="$HOME/.bash_history"
@@ -38,7 +38,7 @@ set_prompts() {
     local BG_CYAN="\[\033[46m\]"
     local BG_WHITE="\[\033[47m\]"
 
-    PS1="${EM_MAGENTA}\w\n${EM_CYAN}% ${DEFAULT}"
+    PS1="${EM_RED}\w\n${EM_BLACK}> ${DEFAULT}"
     export PS1
 }
 set_prompts

@@ -1,5 +1,5 @@
 " General " ~~~~~~~~~~~~~~~~ syntax on
-colorscheme zenburn
+colorscheme github
 
 let mapleader = ","
 let g:mapleader = ","
@@ -121,7 +121,7 @@ vmap <Tab> >gv
 nmap <S-Tab> <<
 nmap <Tab> >>
 
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'sol'
 
 " Turns on/off the expansion of <CR>
 let delimitMate_expand_cr=1
