@@ -44,7 +44,7 @@ hi Search       guifg=#000000 ctermfg=16   guibg=#CDCDFD ctermbg=189  gui=ITALIC
 hi Ignore       guifg=#808080 ctermfg=244  gui=NONE cterm=NONE
 hi Identifier   guifg=#0086B3 ctermfg=31   gui=NONE cterm=NONE
 hi PreProc      guifg=#A0A0A0 ctermfg=247  gui=BOLD cterm=BOLD
-hi Comment      guifg=#FFFFFF ctermfg=231  guibg=#990000 ctermbg=88 gui=ITALIC cterm=ITALIC
+" hi Comment      guifg=#FFFFFF ctermfg=250  ctermbg=231 gui=ITALIC cterm=ITALIC
 hi Constant     guifg=#177F80 ctermfg=30   gui=NONE cterm=NONE
 hi String       guifg=#D81745 ctermfg=161  gui=NONE cterm=NONE
 hi Function     guifg=#990000 ctermfg=88   gui=BOLD cterm=BOLD
