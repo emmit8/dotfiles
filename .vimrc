@@ -86,14 +86,16 @@ noremap <silent> <c-l> :bn!<cr>
 noremap <silent> <c-h> :bp!<cr>
 
 nmap <Enter> o<ESC>
-nmap Ò mzgg=G`z 
+nmap Ò mzgg=G`z
 noremap <silent> ; :nohlsearch<CR>
 
 imap <c-@> <c-space>
 
 " Moving line
 nnoremap Ô :m .+1<cr>==
-nnoremap  :m .-2<cr>== inoremap Ô <Esc>:m .+1<cr>==gi
+nnoremap  :m .-2<cr>==
+
+inoremap Ô <Esc>:m .+1<cr>==gi
 inoremap  <Esc>:m .-2<cr>==gi
 
 vnoremap Ô :m '>+1<cr>gv=gv
