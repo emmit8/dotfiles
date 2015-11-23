@@ -1,11 +1,16 @@
-" General " ~~~~~~~~~~~~~~~~ syntax on
-colorscheme zenburn
+" General
+" ~~~~~~~~~~~~~~~~ 
 
-let mapleader = ","
-let g:mapleader = ","
+syntax on
+colorscheme gruvbox
+
+set background=dark
 set clipboard=unnamed
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set hidden
+
+let mapleader = ","
+let g:mapleader = ","
 
 set backspace=indent,eol,start
 set laststatus=2
@@ -123,7 +128,7 @@ vmap <Tab> >gv
 nmap <S-Tab> <<
 nmap <Tab> >>
 
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'base16'
 
 " Turns on/off the expansion of <CR>
 let delimitMate_expand_cr=1
