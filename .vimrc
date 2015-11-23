@@ -1,4 +1,7 @@
-" General " ~~~~~~~~~~~~~~~~ syntax on
+" General
+" ~~~~~~~~~~~~~~~~ 
+
+syntax on
 colorscheme gruvbox
 
 set background=dark
