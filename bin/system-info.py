@@ -42,9 +42,9 @@ def info():
     cpu = psutil.cpu_percent(interval=0.1)
 
     # return "inet >> %(net)s hdd >> %(hdd)s mem >> %(mem)s cpu >> %(cpu)s%% " % {
-    return "hdd >> %(hdd)s mem >> %(mem)s cpu >> %(cpu)s%% " % {
+    return "hdd %(hdd)s | mem %(mem)s | cpu %(cpu)s%% " % {
             # 'net' : 'ip: {0} ul: {1} / dl: {2}'.format(*up_down_rate()),
-            'hdd' : sizeof_fmt(hdd.free),
+            'hdd' : '{0}/{1}'.format(sizeof_fmt(hdd.total), sizeof_fmt(hdd.free)),
             'mem' : '{0}/{1}'.format(sizeof_fmt(mem.used), sizeof_fmt(mem.total)),
             'cpu' : str(cpu) 
     }

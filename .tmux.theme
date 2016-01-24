@@ -3,15 +3,15 @@ set -g status-left-length 32
 set -g status-right-length 150
 
 set -g status-fg colour15
-set -g status-bg colour232
+set -g status-bg colour0
 set -g window-status-activity-attr bold
 set -g pane-border-fg colour245
 set -g pane-active-border-fg colour39
 set -g message-fg colour15
-set -g message-bg colour16
+set -g message-bg colour0
 set -g message-attr bold
 
-set -g status-left ' #(whoami) >> '
-set -g window-status-format "#[fg=colour240] [#I] #W "
-set -g window-status-current-format "#[fg=colour11,nobold,noreverse] [#I] #W "
-set -g status-right '#[fg=color39]#($DOTFILES/bin/now-playing.sh) #($DOTFILES/bin/system-info.py)'
+set -g status-left '#[fg=colour5,bold]@trippyroman '
+set -g window-status-format "#[fg=colour241,nobold] [#I] #W"
+set -g window-status-current-format "#[fg=colour11,nobold,noreverse] [#I] #W"
+set -g status-right '#[fg=colour14]#($DOTFILES/bin/now-playing.sh) #[fg=colour249]#($DOTFILES/bin/system-info.py)'
