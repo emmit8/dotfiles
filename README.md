@@ -1,5 +1,5 @@
 ### - dotfiles
-yo! It is *emmit's* dotfiles
+yo! It is *roman* dotfiles
 
 ### - requirements
 
