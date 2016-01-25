@@ -30,7 +30,7 @@ xc() {
 
 # Exports
 # -------
-export PS1="$(xc 30 bold)\w\n$(xc 34)% $(xc -)"
+export PS1="$(xc 37)\w\n$(xc 34 bold)> $(xc -)"
 export CLICOLOR=1
 
 unset -f xc
