@@ -20,8 +20,7 @@ xc() {
     if [ "$2" = "bold" ] ; then
         weight=1
     fi
-
-    if ! [ "$1" = "-" ] ; then 
+if ! [ "$1" = "-" ] ; then 
         colour="\[\033[$weight;$1m\]"
     fi 
 
@@ -30,7 +29,7 @@ xc() {
 
 # Exports
 # -------
-export PS1="$(xc 37)\w\n$(xc 34 bold)> $(xc -)"
+export PS1="$(xc 37)\w\n$(xc 33)$ $(xc -)"
 export CLICOLOR=1
 
 unset -f xc
