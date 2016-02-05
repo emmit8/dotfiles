@@ -23,7 +23,7 @@ defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.749020 0.8
 ###############################################################################
 
 # Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Desktop/screenshoots"
+defaults write com.apple.screencapture location -string "${HOME}/Desktop/screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
