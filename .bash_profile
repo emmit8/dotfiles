@@ -29,7 +29,8 @@ if ! [ "$1" = "-" ] ; then
 
 # Exports
 # -------
-export PS1="$(xc 37)\w\n$(xc 33)$ $(xc -)"
+export HISTSIZE=4096
+export PS1="$(xc 37)\w\n$(xc 33 bold)> $(xc -)"
 export CLICOLOR=1
 
 unset -f xc

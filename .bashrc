@@ -23,3 +23,4 @@ PATH=$PATH:$HOME/.rvm/bin:$SCALA_HOME/bin # Add RVM to PATH for scripting
 
 # Mignight Commander viewer and sys editor
 export EDITOR=vi
+
