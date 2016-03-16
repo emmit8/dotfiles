@@ -1,6 +1,7 @@
 ### - dotfiles
 yo! It is *roman* dotfiles
 
+![](./screenshot.png)
 ### - requirements
 
 1. Ruby, Python
