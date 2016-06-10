@@ -11,7 +11,7 @@ set -g message-fg colour15
 set -g message-bg colour0
 set -g message-attr bold
 
-set -g status-left '#[fg=white]roman '
+set -g status-left '#[fg=white] roman@work'
 set -g window-status-format "#[fg=colour241,nobold] [#I] #W"
 set -g window-status-current-format "#[fg=colour11,nobold,noreverse] [#I] #W"
 set -g status-right '#[fg=colour14]#($DOTFILES/bin/now-playing.sh) #[fg=colour249]#($DOTFILES/bin/system-info.py)'
