@@ -34,22 +34,6 @@ filetype plugin indent on
 " ~~~~~~~~~~~~~~~~
 call plug#begin('~/.vim/plugged')
 
-" Code plugins
-" ~~~~~~~~~~~~~~~~
-
-" stylus
-Plug 'wavded/vim-stylus'
-
-" javascript
-Plug 'pangloss/vim-javascript'
-
-" coffee
-Plug 'kchmck/vim-coffee-script'
-
-" clojure
-Plug 'guns/vim-clojure-static'
-Plug 'tpope/vim-fireplace'
-
 " Interface plugins, utils, etc
 " ~~~~~~~~~~~~~~~~
 
@@ -81,10 +65,6 @@ nmap <silent> <leader>t :NERDTreeToggle<cr>
 
 nmap <silent> <leader>m :CtrlPMRUFiles<cr>
 nmap <silent> <leader>r :CtrlPBuffer<cr>
-
-" Vim firplace mappings
-nmap <silent> <leader>j gf<cr>
-nmap <silent> <s-e> :Eval<cr>
 
 " buffers
 noremap <silent> <c-l> :bn!<cr>
