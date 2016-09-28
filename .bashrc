@@ -18,7 +18,7 @@ if command_exists nvm ; then
     source $(brew --prefix nvm)/nvm.sh
 fi
 
-PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
+PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:~/.pub-cache/bin:$PATH
 PATH=$PATH:$HOME/.rvm/bin:$SCALA_HOME/bin # Add RVM to PATH for scripting
 
 # Mignight Commander viewer and sys editor
