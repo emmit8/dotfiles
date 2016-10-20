@@ -32,6 +32,7 @@ if ! [ "$1" = "-" ] ; then
 export HISTSIZE=4096
 export PS1="$(xc 37)\w\n$(xc 33 bold)$ $(xc -)"
 export CLICOLOR=1
+export HOMEBREW_NO_EMOJI=1
 
 unset -f xc
 
