@@ -9,7 +9,7 @@ alias vi="reattach-to-user-namespace vim"
 alias nano="nano -w"
 alias mc="mc"
 alias tm="tmux attach || tmux new"
-alias yarn="yarn --no-emoji"
+alias ya="yarn --no-emoji"
 # Git
 alias gc="git commit"
 alias ga="git add"
