@@ -1,6 +1,6 @@
 [
     { "key" : "shift+cmd+T",            "command": "workbench.action.selectTheme"},
-    { "key" : "cmd+alt+l",              "command": "editor.action.format"},
+    { "key" : "cmd+alt+l",              "command": "editor.action.formatDocument"},
     { "key": "shift+cmd+down",          "command": "editor.action.moveLinesDownAction",
                                            "when": "editorTextFocus" },
     { "key": "shift+cmd+up",            "command": "editor.action.moveLinesUpAction",
@@ -8,5 +8,7 @@
     { "key": "cmd+d",                   "command": "editor.action.copyLinesDownAction",
                                            "when": "editorTextFocus" },
     { "key": "shift+cmd+d",             "command": "editor.action.copyLinesUpAction",
-                                           "when": "editorTextFocus" }
+                                           "when": "editorTextFocus" },
+    { "key": "cmd+shift+u",             "command": "extension.changeCase.swap", 
+                                            "when": "editorTextFocus" }
 ]

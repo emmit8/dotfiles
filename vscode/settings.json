@@ -2,6 +2,15 @@
 {
         "editor.fontFamily": "Consolas",
         "editor.fontSize": 12,
+        "editor.lineHeight": 20,
+        "editor.fontWeight": "200",
         "files.autoSave": "afterDelay",
-        "files.autoSaveDelay": 5000
-}
+        "files.autoSaveDelay": 5000,
+        "workbench.editor.enablePreview": false,
+        "workbench.editor.showTabs": false,
+        "editor.wordWrap": "on",
+        "window.titleBarStyle": "native",
+        "workbench.iconTheme": "vscode-icon-theme",
+        "window.zoomLevel": 0,
+        "workbench.colorTheme": "eppz!"
+    }
