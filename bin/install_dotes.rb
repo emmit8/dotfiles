@@ -6,6 +6,7 @@ require 'fileutils.rb'
 
 class DotFiles
     @@home_dir = File.expand_path "~"
+    @@excludes = [".git", ".gitignore"]
     @@dotfiles_root = File.expand_path("..", File.dirname(__FILE__))
 
     def initialize(backup = false)
@@ -28,7 +29,7 @@ class DotFiles
     def install
         puts "Installing emmit's dotfiles..."
         backup?()
-        dotfiles().each do |dot|
+        (dotfiles() - @@excludes).each do |dot|
             dest = File.join @@home_dir, dot
             source = File.expand_path(dot, @@dotfiles_root)
             if File.exist? dest and not File.symlink? dest and @options[:backup]
