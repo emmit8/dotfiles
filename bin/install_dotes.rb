@@ -2,13 +2,16 @@
 #
 # Install script for my dotfiles
 #
-require 'fileutils.rb'
+require 'fileutils'
+require 'json'
 
 class DotFiles
     @@home_dir = File.expand_path "~"
     @@excludes = [".git", ".gitignore"]
     @@dotfiles_root = File.expand_path("..", File.dirname(__FILE__))
-
+    @@mappings = {
+        "vscode" => "~/Library/Application\ Support/Code/User/"
+    }
     def initialize(backup = false)
         @options = {:backup => backup}
         dotfiles_sym = File.join(@@home_dir, ".dotfiles")
@@ -25,31 +28,47 @@ class DotFiles
             @options[:backup] = true
         end
     end
-
+    def copy(dest, src)
+        dot = File.basename src
+        if File.exist? dest and not File.symlink? dest and @options[:backup]
+            puts "File `#{dot}` backuped with .bak extenstion"
+            FileUtils.cp(dest, File.join(dest + ".bak"))
+        else
+            unless File.file?(dest) && File.readlink(dest) == src
+                FileUtils.safe_unlink dest
+                puts "Creating symlink at `#{dest}` for dotfile `#{dot}`"
+                FileUtils.ln_sf src, dest
+            else
+                puts "Symlink for dotfile `#{dot}` already exist. Nothing to do."
+            end
+        end 
+    end
     def install
         puts "Installing emmit's dotfiles..."
         backup?()
         (dotfiles() - @@excludes).each do |dot|
-            dest = File.join @@home_dir, dot
-            source = File.expand_path(dot, @@dotfiles_root)
-            if File.exist? dest and not File.symlink? dest and @options[:backup]
-                puts "File `#{dot}` backuped with .bak extenstion"
-                FileUtils.cp(dest, File.join(dest + ".bak"))
-            else
-                unless File.file?(dest) && File.readlink(dest) == source
-                    FileUtils.safe_unlink dest
-                    puts "Creating symlink at `#{@@home_dir}` for dotfile `#{dot}`"
-                    FileUtils.ln_sf source, dest
-                else
-                    puts "Symlink for dotfile `#{dot}` already exist. Nothing to do."
-                end
+            path = File.expand_path(dot, @@dotfiles_root)
+            if File.directory? path and @@mappings.key?(dot)
+                entries  = Dir.entries(path).reject{ |f| File.directory?(f) }
+                mapping  = @@mappings[dot]
+                dir_root = File.expand_path dot, @@dotfiles_root
+                entries.each { |d| 
+                    dest = @@mappings[File.join dot, d]
+                    dest ||= mapping
+                    copy(File.expand_path(dest), File.expand_path(d, dir_root)) 
+                }
+            else 
+                copy(File.join @@home_dir, dot, File.expand_path(dot, @@dotfiles_root))
             end
         end
         puts "Installing successful done... Enjoy nerdy boy ⊂( ・ ̫・)⊃"
     end
 
     def dotfiles
-        Dir.entries(@@dotfiles_root).reject{|entry| File.directory? File.expand_path(entry) or not File.basename(entry).start_with?(".") }
+        Dir.entries(@@dotfiles_root).select {|entry| 
+            path = File.expand_path(entry, @@dotfiles_root)
+            (File.directory?(path) and @@mappings.key?(entry)) or (not File.directory?(path) and File.basename(entry).start_with?("."))
+        }
     end
 end
 
