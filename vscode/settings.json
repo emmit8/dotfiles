@@ -2,15 +2,17 @@
 {
         "editor.fontFamily": "Consolas",
         "editor.fontSize": 12,
-        "editor.lineHeight": 20,
-        "editor.fontWeight": "200",
+        "editor.fontWeight": "400",
+        "editor.lineHeight": 16,
         "files.autoSave": "afterDelay",
         "files.autoSaveDelay": 5000,
-        "workbench.editor.enablePreview": false,
         "workbench.editor.showTabs": false,
-        "editor.wordWrap": "on",
-        "window.titleBarStyle": "native",
-        "workbench.iconTheme": "vscode-icon-theme",
         "window.zoomLevel": 0,
+        "editor.renderWhitespace": "all",
+        "editor.minimap.enabled": false,
+        "eslint.autoFixOnSave": true,
+        "git.enableSmartCommit": true,
+        "workbench.fontAliasing": "antialiased",
+        "workbench.iconTheme": "vscode-icon-theme",
         "workbench.colorTheme": "eppz!"
-    }
+}

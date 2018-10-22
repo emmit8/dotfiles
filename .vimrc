@@ -2,9 +2,9 @@
 " ~~~~~~~~~~~~~~~~ 
 
 syntax on
-colorscheme gruvbox
+colorscheme github
 
-set background=dark
+set background=light
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set hidden
 

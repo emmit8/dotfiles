@@ -17,7 +17,6 @@ chflags nohidden ~/Library
 # Set highlight color to pink
 defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.749020 0.823529"
 
-#
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
@@ -33,6 +32,12 @@ defaults write com.apple.screencapture disable-shadow -bool true
 
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
+
+# Set font smoothing value to 1
+defaults write -g AppleFontSmoothing -int 1
+ 
+# Disable font smoothing for Terminal app
+defaults write com.apple.Terminal AppleFontSmoothing -int 1
 
 ##############################################################################
 # Spotlight                                                                   #
