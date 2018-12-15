@@ -105,3 +105,5 @@ defaults write com.apple.finder ShowPathbar -bool true
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 
+# Mojave blurry font fix
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool FALSE
