@@ -4,7 +4,7 @@ command_exists () {
 
 # HOME  --->
 export SCALA_HOME=/usr/local/opt/scala
-export JAVA_HOME=$(/usr/libexec/java_home -v '1.8*')
+export JAVA_HOME=$(/usr/libexec/java_home -v '11*')
 
 export DOTFILES=~/.dotfiles
 # RBENV --->
