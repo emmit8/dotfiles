@@ -58,7 +58,7 @@ class DotFiles
                     copy(File.expand_path(dest), File.expand_path(d, dir_root)) 
                 }
             else 
-                copy(File.join @@home_dir, dot, File.expand_path(dot, @@dotfiles_root))
+                copy(File.join(@@home_dir, dot), File.expand_path(dot, @@dotfiles_root))
             end
         end
         puts "Installing successful done... Enjoy nerdy boy ⊂( ・ ̫・)⊃"
