@@ -55,7 +55,9 @@ class DotFiles
                 entries.each { |d| 
                     dest = @@mappings[File.join dot, d]
                     dest ||= mapping
-                    copy(File.expand_path(dest), File.expand_path(d, dir_root)) 
+                    dest = File.expand_path(dest)
+                    FileUtils.mkdir_p(dest) unless File.directory?(dest)
+                    copy(dest, File.expand_path(d, dir_root)) 
                 }
             else 
                 copy(File.join(@@home_dir, dot), File.expand_path(dot, @@dotfiles_root))
