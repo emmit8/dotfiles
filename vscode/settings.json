@@ -14,5 +14,6 @@
         "git.enableSmartCommit": true,
         "workbench.fontAliasing": "antialiased",
         "workbench.iconTheme": "vscode-icon-theme",
-        "workbench.colorTheme": "eppz!"
+        "workbench.colorTheme": "eppz!",
+        "metals.javaHome": "/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home"
 }

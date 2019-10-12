@@ -23,4 +23,4 @@ PATH=$PATH:$HOME/.rvm/bin:$SCALA_HOME/bin # Add RVM to PATH for scripting
 
 # Mignight Commander viewer and sys editor
 export EDITOR=vi
-
+export BASH_SILENCE_DEPRECATION_WARNING=1
