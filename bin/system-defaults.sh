@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/baeh
 # Original source : https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 
 # Ask for the administrator password upfront
@@ -34,64 +34,10 @@ defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
 # Set font smoothing value to 1
-defaults write -g AppleFontSmoothing -int 1
- 
+# defaults write -g AppleFontSmoothing -int 1
+
 # Disable font smoothing for Terminal app
 defaults write com.apple.Terminal AppleFontSmoothing -int 1
-
-##############################################################################
-# Spotlight                                                                   #
-###############################################################################
-
-# Hide Spotlight tray-icon (and subsequent helper)
-# sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
-# Disable Spotlight indexing for any volume that gets mounted and has not yet
-# been indexed before.
-# Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array \
-        "/Volumes" \
-        "${HOME}/Development" \
-        "${HOME}/Downloads" \
-        "${HOME}/Pictures"
-
-# Change indexing order and disable some search results
-# Yosemite-specific search results (remove them if you are using OS X 10.9 or older):
-#	MENU_DEFINITION
-#	MENU_CONVERSION
-#	MENU_EXPRESSION
-#	MENU_SPOTLIGHT_SUGGESTIONS (send search queries to Apple)
-#	MENU_WEBSEARCH             (send search queries to Apple)
-#	MENU_OTHER
-defaults write com.apple.spotlight orderedItems -array \
-	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
-	'{"enabled" = 0;"name" = "SYSTEM_PREFS";}' \
-	'{"enabled" = 0;"name" = "DIRECTORIES";}' \
-	'{"enabled" = 0;"name" = "PDF";}' \
-	'{"enabled" = 0;"name" = "FONTS";}' \
-	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
-	'{"enabled" = 0;"name" = "MESSAGES";}' \
-	'{"enabled" = 0;"name" = "CONTACT";}' \
-	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
-	'{"enabled" = 0;"name" = "IMAGES";}' \
-	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
-	'{"enabled" = 0;"name" = "MUSIC";}' \
-	'{"enabled" = 0;"name" = "MOVIES";}' \
-	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
-	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
-	'{"enabled" = 0;"name" = "SOURCE";}' \
-	'{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
-	'{"enabled" = 0;"name" = "MENU_OTHER";}' \
-	'{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
-	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
-	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
-	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
-
-# Load new settings before rebuilding the index
-killall mds > /dev/null 2>&1
-# Make sure indexing is enabled for the main volume
-sudo mdutil -i on / > /dev/null
-# Rebuild the index from scratch
-sudo mdutil -E / > /dev/null
 
 ###############################################################################
 # Finder                                                                      #
@@ -103,7 +49,7 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
-echo "Done. Note that some of these changes require a logout/restart to take effect."
-
 # Mojave blurry font fix
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool FALSE
+
+echo "Done. Note that some of these changes require a logout/restart to take effect."
